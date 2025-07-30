@@ -1,83 +1,94 @@
-🚗 Car Price Prediction
-This project focuses on predicting the price of used cars using machine learning techniques. It leverages historical data with multiple vehicle features to train and evaluate predictive models, aiding in understanding which factors most influence car prices.
+# 🚗 Car Price Prediction
 
-📊 Dataset
-The dataset contains various features including:
+This project predicts the price of used cars using machine learning techniques. By analyzing various features of a car, the model helps estimate a fair selling price, which can be useful for both buyers and sellers.
 
-Car Name
+---
 
-Year of Purchase
+## 📊 Dataset
 
-Present Price
+The dataset includes the following features:
 
-Kms Driven
+- **Car Name**
+- **Year** (of purchase)
+- **Present Price**
+- **Kms Driven**
+- **Fuel Type**
+- **Seller Type**
+- **Transmission**
+- **Owner**
+- **Selling Price** *(Target Variable)*
 
-Fuel Type
+---
 
-Seller Type
+## 🛠️ Technologies Used
 
-Transmission
+- Python 🐍
+- Jupyter Notebook
+- Pandas & NumPy
+- Matplotlib & Seaborn (for visualization)
+- Scikit-learn (for ML models)
 
-Owner
+---
 
-The target variable is Selling Price.
+## 🔍 Workflow
 
-🛠️ Technologies Used
-Python 🐍
+1. **Data Exploration & Cleaning**
+   - Loaded the dataset using Pandas
+   - Checked for missing values
+   - Converted purchase year into car age
+   - Encoded categorical variables
 
-Pandas, NumPy
+2. **Data Visualization**
+   - Correlation heatmap
+   - Feature distribution plots
+   - Pairplots to identify relationships
 
-Matplotlib, Seaborn (for data visualization)
+3. **Feature Engineering**
+   - Removed irrelevant features (like `Car_Name`)
+   - One-hot encoded `Fuel Type`, `Seller Type`, `Transmission`
+   - Feature scaling where necessary
 
-Scikit-learn (for ML modeling)
+4. **Model Building**
+   - Tried multiple models: 
+     - Linear Regression
+     - Lasso Regression
+     - Ridge Regression
+     - Random Forest Regressor
+   - Used GridSearchCV for hyperparameter tuning
 
-Jupyter Notebook
+5. **Model Evaluation**
+   - Evaluated using:
+     - R² Score
+     - Mean Absolute Error (MAE)
+   - Visualized predictions vs actual prices
 
-🔍 Workflow
-Data Exploration & Preprocessing
+6. **Best Performing Model**
+   - **Random Forest Regressor**
+   - Achieved **~96% R² Score** on test set
 
-Loaded the dataset using Pandas.
+---
 
-Handled categorical variables using encoding.
+## 📈 Feature Importance
 
-Converted the Year feature to the age of the car.
+- Present Price
+- Year (age)
+- Kms Driven
+- Fuel Type (Petrol/Diesel)
+- Transmission (Manual/Automatic)
 
-Visualization
+---
 
-Correlation heatmaps.
+## 💡 Key Takeaways
 
-Pairplots to understand relationships between features.
+- Feature engineering plays a key role in improving model performance
+- Tree-based models like Random Forest often outperform linear models on structured data
+- Visualizing feature importance helps in better understanding the model
 
-Feature Engineering
+---
 
-Dropped irrelevant or highly correlated features.
+## 🚀 Running the Project
 
-Scaled numeric data when needed.
-
-Model Training
-
-Used multiple regression models (Linear Regression, Lasso, Ridge, Random Forest).
-
-Used GridSearchCV for hyperparameter tuning.
-
-Evaluation
-
-Compared model performances using R² score and MAE.
-
-Selected the best-performing model.
-
-📈 Result
-Best Model: Random Forest Regressor
-
-R² Score: ~0.96 (depends on final tuning)
-
-Feature importance was also visualized to understand which parameters influence price prediction most.
-
-💡 Key Learnings
-Handling categorical and numerical features differently.
-
-Importance of feature selection in regression tasks.
-
-Hyperparameter tuning using GridSearchCV.
-
-Visualizing feature importance in tree-based models.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/car-price-prediction.git
+   cd car-price-prediction
